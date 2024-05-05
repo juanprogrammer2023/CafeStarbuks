@@ -67,7 +67,7 @@ document.getElementById('btonTerminarEdicion').addEventListener('click', functio
       };
   
       // Realizar la solicitud PUT al servidor
-      fetch('http://localhost:3000/editar-nombre-archivo', {
+      fetch('http://18.188.216.108:3000/editar-nombre-archivo', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -112,7 +112,7 @@ document.getElementById('btonTerminarEdicion').addEventListener('click', functio
         const nombreArchivo = inputNombreArchivo.value.trim();
 
         if (nombreArchivo && Number(contrasena) === float) { 
-            fetch('http://localhost:3000/eliminar-archivo', {
+            fetch('http://18.188.216.108:3000/eliminar-archivo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultadoDiv = document.getElementById('resultado');
 
     botonInfoArchivos.addEventListener('click', function() {
-        fetch('http://localhost:3000/listar-archivos')
+        fetch('http://18.188.216.108:3000/listar-archivos')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

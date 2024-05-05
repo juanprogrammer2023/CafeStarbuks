@@ -1,6 +1,6 @@
 // Función para obtener la lista de archivos disponibles
 function obtenerArchivos() {
-  fetch('http://localhost:3000/archivos')
+  fetch('http://18.188.216.108:3000/archivos')
     .then(response => response.json())
     .then(data => {
       const listaArchivos = document.getElementById('lista-archivos');
@@ -18,7 +18,7 @@ function obtenerArchivos() {
         nuevoArchivo.innerHTML = `
   <img src="imagenes/carpetas.png" alt="Archivo" width="50">
   <p>${nombreArchivo}</p>
-  <a href="http://localhost:3000/archivos/${nombreArchivo}" target="_blank">
+  <a href="http://18.188.216.108:3000/archivos/${nombreArchivo}" target="_blank">
     <button>Descargar</button>
   </a>
 `;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', obtenerArchivos);
 
 function exportarUsuarios() {
   // Hacer una solicitud GET al endpoint /exportar-usuarios
-  fetch('http://localhost:3000/exportar-usuarios')
+  fetch('http://18.188.216.108:3000/exportar-usuarios')
       .then(response => {
           // Verificar si la respuesta es exitosa
           if (!response.ok) {
