@@ -74,9 +74,13 @@ app.get('/sedes.html', (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'admnistador.html'));
 });
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Ruta para acceder a los archivos en la carpeta "uploads"
 app.get('/archivos/:fileName', (req, res) => {
-  const fileName = req.params.fileName;
-  res.sendFile(path.join(__dirname, 'uploads', fileName));
+    const fileName = req.params.fileName;
+    res.sendFile(path.join(__dirname, 'uploads', fileName));
 });
 // ----------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------
