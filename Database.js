@@ -27,7 +27,55 @@ const connection = mysql.createConnection({
   password: 'QyYDKsD8kavrHw8Pikx5',
   database: 'Starbucks',
 });
+// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
+// Configurar middleware para servir archivos estáticos desde la carpeta 'CafeStarbucks'
+app.use(express.static(path.join(__dirname, 'CafeStarbucks')));
 
+// Configurar el endpoint para servir archivos CSS y JavaScript dinámicamente
+app.get('/archivos.css/:nombreArchivo', (req, res) => {
+  const nombreArchivo = req.params.nombreArchivo;
+  res.sendFile(path.join(__dirname, 'archivos.css', nombreArchivo));
+});
+
+app.get('/archivos.js/:nombreArchivo', (req, res) => {
+  const nombreArchivo = req.params.nombreArchivo;
+  res.sendFile(path.join(__dirname, 'archivos.js', nombreArchivo));
+});
+// Configurar el endpoint para servir las imágenes estáticas
+app.get('/imagenes/:imageName', (req, res) => {
+    const imageName = req.params.imageName;
+    res.sendFile(path.join(__dirname, 'imagenes', imageName));
+});
+
+// Configurar el endpoint para servir imágenes estáticas desde el directorio 'imagenes/img'
+app.get('/imagenes/img/:imageName', (req, res) => {
+  const imageName = req.params.imageName;
+  res.sendFile(path.join(__dirname, 'imagenes', 'img', imageName));
+});
+// Configurar el endpoint para servir imágenes estáticas desde el directorio 'imagenes/tiendas'
+app.get('/imagenes/tiendas/:imageName', (req, res) => {
+  const imageName = req.params.imageName;
+  res.sendFile(path.join(__dirname, 'imagenes', 'tiendas', imageName));
+});
+app.get('/Manuales.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Manuales.html'));
+});
+
+app.get('/visualizacion.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'visualizacion.html'));
+});
+
+app.get('/sedes.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'sedes.html'));
+});
+
+// Configurar el endpoint para la página principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admnistador.html'));
+});
+// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
 app.get('/exportar-usuarios', (req, res) => {
   const sql = 'SELECT id, name, email, password FROM usuarios';
   
@@ -68,9 +116,6 @@ app.get('/exportar-usuarios', (req, res) => {
     }
   });
 });
-
-
-
 const directorioUploads = path.join(__dirname, 'uploads');
 app.use('/archivos', express.static(directorioUploads));
 

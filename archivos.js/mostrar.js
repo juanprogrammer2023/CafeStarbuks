@@ -18,7 +18,7 @@ function obtenerArchivos() {
         nuevoArchivo.innerHTML = `
   <img src="imagenes/carpetas.png" alt="Archivo" width="50">
   <p>${nombreArchivo}</p>
-  <a href="http://18.188.216.108:3000/archivos/${nombreArchivo}" target="_blank">
+  <a href="http://18.188.216.108:3000/${nombreArchivo}" target="_blank">
     <button>Descargar</button>
   </a>
 `;

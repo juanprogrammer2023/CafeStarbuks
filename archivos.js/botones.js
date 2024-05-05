@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const registroBtn = document.getElementById('registroBtn');
 
     // Enviamos los datos al servidor para verificar el inicio de sesión
-    fetch('http://18.188.216.108:3000/login', {
+    fetch('http://localhost:3000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
