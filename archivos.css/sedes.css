@@ -1,0 +1,335 @@
+header{
+    background-image: url("/imagenes/Starbucks-160322-a.jpg");
+    background-repeat:repeat-y;
+    background-size: cover;
+    width: 100%;
+    border-image: fill 0 linear-gradient(#0001,#000)
+
+}
+
+#Play{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.navbar{
+    padding: 20px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+}
+.navbar button {
+    position: relative;
+    font-size: 1.2em;
+    padding: 0.7em 1.4em;
+    background-color: #03734A ;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    color: #DEDEDE;
+    /* box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3); */
+  }
+  
+  .navbar button::before {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 50%, rgba(150,4,31,1) 50%, rgba(191,4,38,1) 60%);
+    border-radius: 0 0 0.5em 0;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+  }
+  
+  .navbar button:hover::before {
+    width: 1.6em;
+    height: 1.6em;
+  }
+  
+  .navbar button:active {
+    box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+    transform: translate(0.1em, 0.1em);
+  }
+  .socials-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(150, 150, 150);
+  }
+  .social-button {
+    text-decoration: none;
+  }
+  .social-button svg {
+    width: 15px;
+    fill: rgb(228, 228, 228);
+  }
+  .social-button:hover svg {
+    fill: rgb(255, 102, 47);
+  }
+
+  .container{
+   display: flex;
+   
+}
+
+.container img{
+flex-direction: column;
+    width: 300px;
+    height: 200px;
+    border: 3px solid black;
+}
+
+  @media only screen and (max-width: 600px) {
+    .navbar{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 5px;
+        width: -10px;
+    }
+
+    #Play{
+        display: block;
+        
+        
+    }
+    .social-container{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+	display: flex;
+  gap: 20px;
+	
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+  
+	
+
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	width: calc(33.33% - 7px);
+  border-image: fill 0 linear-gradient(#0001,#001);
+}
+
+.card .textos {
+	height: 100%;
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	background-size: cover;
+	background-position: center center;
+	width: 30%;
+
+
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor{
+    flex-direction: column;
+  }
+  .banner,.contenedor-conciertos{
+    width: 100%;
+  }
+  .banner{
+    height: 500px;
+  }
+  .card{
+    width: 100%;
+  }
+
+}
+
+@media screen and ((min-width:600px) and (max-width: 900px)) {
+	.contenedor{
+    flex-direction: column;
+  }
+  .banner,.contenedor-conciertos{
+    width: 100%;
+  }
+
+  .banner{
+    
+    height: 500px;
+  }
+  
+}
+
+iframe{
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.rating-card {
+  width: 280px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f0c29;
+  background: linear-gradient(to right bottom, #443e89, #0f0c29);
+  padding: 20px 20px;
+  border-radius: 10px;
+  gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.058);
+}
+.text-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.text-primary {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.text-secondary {
+  color: #cccccc;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.rating-stars-container {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.star-label svg {
+  fill: rgb(210, 210, 210);
+  width: 20px;
+  height: auto;
+}
+.rating-stars-container input {
+  appearance: unset;
+}
+.rating-stars-container input:hover ~ .star-label svg {
+  fill: rgb(255, 204, 185);
+}
+.rating-stars-container input:checked ~ .star-label svg {
+  fill: rgb(255, 102, 47);
+  animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.socials-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(150, 150, 150);
+}
+.social-button {
+  text-decoration: none;
+}
+.social-button svg {
+  width: 15px;
+  fill: rgb(228, 228, 228);
+}
+.social-button:hover svg {
+  fill: rgb(255, 102, 47);
+}
+
+
+.rating-card{
+  width: 100%;
+}
