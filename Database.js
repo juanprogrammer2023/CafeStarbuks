@@ -74,6 +74,10 @@ app.get('/sedes.html', (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'admnistador.html'));
 });
+app.get('/archivos/:fileName', (req, res) => {
+  const fileName = req.params.fileName;
+  res.sendFile(path.join(__dirname, 'uploads', fileName));
+});
 // ----------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------
 app.get('/exportar-usuarios', (req, res) => {
