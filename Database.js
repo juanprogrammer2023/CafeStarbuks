@@ -116,6 +116,7 @@ app.get('/exportar-usuarios', (req, res) => {
     }
   });
 });
+
 const directorioUploads = path.join(__dirname, 'uploads');
 app.use('/archivos', express.static(directorioUploads));
 
