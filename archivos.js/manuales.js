@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const nombre = urlParams.get('nombre');
 
   // Mostrar una ventana emergente con el primer nombre del usuario
-  alert("¡Hola, " + nombre.split(' ')[0] + "! Bienvenido a la página de manuales.");
+  alert("¡Hola, " + nombre.split(' ')[0] + "! Es un gusto tenerte de nuevo aqui");
 
   // Almacenar el nombre en el localStorage
   localStorage.setItem('nombreUsuario', nombre)})
