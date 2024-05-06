@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function login() {
+    const nombre=document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const registroBtn = document.getElementById('registroBtn');
@@ -37,7 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
       return response.json();
     })
     .then(data => {
-      window.location.href = 'Manuales.html';
+      const nombre = data.name.split(' ')[0]; // Obtener el primer nombre
+      const url = `Manuales.html?nombre=${nombre}`;
+    // Redirigir al usuario a la página de Manuales con el nombre como parámetro en la URL
+    window.location.href = url;
     })
     .catch(error => {
       console.error('Error:', error);

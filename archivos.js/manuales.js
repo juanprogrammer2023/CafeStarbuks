@@ -172,4 +172,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Obtener el nombre del usuario de la URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const nombre = urlParams.get('nombre');
+
+  // Mostrar una ventana emergente con el primer nombre del usuario
+  alert("¡Hola, " + nombre.split(' ')[0] + "! Bienvenido a la página de manuales.");
+
+  // Almacenar el nombre en el localStorage
+  localStorage.setItem('nombreUsuario', nombre)})
 

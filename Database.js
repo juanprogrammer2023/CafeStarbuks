@@ -351,9 +351,6 @@ app.post('/registrar', (req, res) => {
     `);
   }
 });
-
-
-
 //HASTA ACA
 // Manejar solicitudes POST a la ruta '/login'
 app.post('/login', (req, res) => {
