@@ -278,24 +278,26 @@ app.post('/registrar', (req, res) => {
     const sql = 'INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)';
     connection.query(sql, [name, email, password], (error, results) => {
       if (error) {
-        // Enviar una respuesta HTML estilizada con un mensaje de error
+        // Enviar una respuesta HTML estilizada con un mensaje de error y un botón para regresar
         res.status(500).send(`
           <html>
             <head><title>Error</title></head>
             <body style="font-family: Arial, sans-serif; margin: 40px; color: red;">
               <h1>Error al registrar el usuario</h1>
               <p>Ha ocurrido un error interno del servidor al intentar registrar su cuenta.</p>
+              <button onclick="window.history.back()">Regresar</button>
             </body>
           </html>
         `);
       } else {
-        // Enviar una respuesta HTML estilizada con un mensaje de éxito
+        // Enviar una respuesta HTML estilizada con un mensaje de éxito y un botón para regresar
         res.status(200).send(`
           <html>
             <head><title>Registro Exitoso</title></head>
             <body style="font-family: Arial, sans-serif; margin: 40px; color: green;">
               <h1>Usuario registrado con éxito</h1>
               <p>¡Bienvenido a nuestra comunidad!</p>
+              <button onclick="window.history.back()">Regresar</button>
             </body>
           </html>
         `);
@@ -309,11 +311,13 @@ app.post('/registrar', (req, res) => {
         <body style="font-family: Arial, sans-serif; margin: 40px; color: orange;">
           <h1>Contraseña Insegura</h1>
           <p>La contraseña debe tener al menos 10 caracteres y cumplir con los estándares de seguridad.</p>
+          <button onclick="window.history.back()">Regresar</button>
         </body>
       </html>
     `);
   }
 });
+
 
 //HASTA ACA
 // Manejar solicitudes POST a la ruta '/login'
