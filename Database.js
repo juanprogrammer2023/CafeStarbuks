@@ -270,33 +270,52 @@ app.post('/eliminar-archivo', (req, res) => {
 });
 
 const ExpReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?\/~`-]).+$/;
-
+//ENDPOINT PARA REGISTRARSE ACTUALIZACION//
 app.post('/registrar', (req, res) => {
   const { name, email, password } = req.body;
 
-  // Verificar si la contraseña cumple con los requisitos de seguridad
   if (password.length > 9 && ExpReg.test(password)) {
-    // Realizar la inserción en la base de datos
     const sql = 'INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)';
     connection.query(sql, [name, email, password], (error, results) => {
       if (error) {
-        console.error('Error al registrar el cliente:', error);
-        // Enviar una respuesta al cliente con un mensaje de error
-        res.status(500).send('Error interno del servidor al registrar el cliente');
+        // Enviar una respuesta HTML estilizada con un mensaje de error
+        res.status(500).send(`
+          <html>
+            <head><title>Error</title></head>
+            <body style="font-family: Arial, sans-serif; margin: 40px; color: red;">
+              <h1>Error al registrar el usuario</h1>
+              <p>Ha ocurrido un error interno del servidor al intentar registrar su cuenta.</p>
+            </body>
+          </html>
+        `);
       } else {
-        console.log('Usuario registrado con éxito');
-        // Enviar una respuesta al cliente con un mensaje de éxito
-        res.status(200).send('Usuario registrado con éxito')
-        
+        // Enviar una respuesta HTML estilizada con un mensaje de éxito
+        res.status(200).send(`
+          <html>
+            <head><title>Registro Exitoso</title></head>
+            <body style="font-family: Arial, sans-serif; margin: 40px; color: green;">
+              <h1>Usuario registrado con éxito</h1>
+              <p>¡Bienvenido a nuestra comunidad!</p>
+            </body>
+          </html>
+        `);
       }
     });
   } else {
     // La contraseña no cumple con los requisitos de seguridad
-    // Mostrar una alerta en el cliente con un mensaje de error
-    res.status(400).send('La contraseña no cumple con los requisitos de seguridad');
+    res.status(400).send(`
+      <html>
+        <head><title>Error de Seguridad</title></head>
+        <body style="font-family: Arial, sans-serif; margin: 40px; color: orange;">
+          <h1>Contraseña Insegura</h1>
+          <p>La contraseña debe tener al menos 10 caracteres y cumplir con los estándares de seguridad.</p>
+        </body>
+      </html>
+    `);
   }
 });
 
+//HASTA ACA
 // Manejar solicitudes POST a la ruta '/login'
 app.post('/login', (req, res) => {
   // Obtener el email y la contraseña del cuerpo de la solicitud
