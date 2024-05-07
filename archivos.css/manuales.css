@@ -694,20 +694,43 @@ main h1{
   }
 }
 
+/* Estilos para el mensaje oculto */
 #mensajeBienvenida {
-  display: none; /* oculto inicialmente */
+  display: none; /* Inicialmente oculto */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black; /* Fondo negro */
-  color: white; /* Texto blanco */
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  background-color: #333; /* Fondo oscuro */
+  border-radius: 15px; /* Bordes redondeados */
   z-index: 1000;
-  text-align: center; /* Centrar el texto */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  width: calc(100% - 60px); /* Ancho del mensaje */
+  max-width: 600px; /* Ancho máximo del mensaje */
+}
+
+/* Estilos para el texto dentro del mensaje */
+#texto {
+  color: #fff; /* Texto blanco */
+  font-size: 20px; /* Tamaño de fuente */
+  margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para el mensaje cuando es visible */
+.mensaje-visible {
+  display: block;
+  animation: fadeIn 0.5s ease; /* Animación de fade-in */
+}
+
+/* Efecto de animación de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Opacidad inicial */
+  }
+  to {
+    opacity: 1; /* Opacidad final */
+  }
 }
 
 

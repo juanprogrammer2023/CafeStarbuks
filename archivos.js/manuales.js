@@ -172,6 +172,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+function lanzarConfetis() {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   // Obtener el nombre del usuario de la URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -179,16 +187,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Mostrar el div con el mensaje de bienvenida
   const mensajeBienvenida = document.getElementById('mensajeBienvenida');
-  mensajeBienvenida.innerText = "¡Hola, " + nombre.split(' ')[0] + "! Es un gusto tenerte de nuevo aquí";
-  mensajeBienvenida.style.display = 'block';
+  const texto = document.getElementById('texto');
+  texto.innerText = "¡Hola, " + nombre.split(' ')[0] + "! Es un gusto tenerte de nuevo aquí";
+  mensajeBienvenida.classList.add("mensaje-visible"); // Agregar clase para mostrar el mensaje
+  lanzarConfetis();
 
-  // Ocultar el div después de 3 segundos
-  setTimeout(function() {
-      mensajeBienvenida.style.display = 'none';
+  setTimeout(() => {
+    mensajeBienvenida.classList.remove("mensaje-visible"); // Remover clase después de 3 segundos
   }, 3000);
 
   // Almacenar el nombre en el localStorage
   localStorage.setItem('nombreUsuario', nombre);
 });
+
 
 

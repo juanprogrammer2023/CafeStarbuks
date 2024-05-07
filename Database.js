@@ -135,8 +135,6 @@ app.get('/archivos', (req, res) => {
       console.error('Error al leer la carpeta de archivos:', err);
       return res.status(500).send('Error interno del servidor');
     }
-
-    
     res.json({ archivos });
     console.log('Archivos en la carpeta uploads:', archivos);
   });
@@ -250,11 +248,6 @@ app.put('/editar-nombre-archivo', (req, res) => {
     });
   });
 });
-
-
-
-
-
 app.post('/eliminar-archivo', (req, res) => {
   const { nombreArchivo } = req.body;
 

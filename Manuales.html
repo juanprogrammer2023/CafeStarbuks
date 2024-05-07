@@ -16,7 +16,9 @@
 </head>
 
 <body>
-  <div id="mensajeBienvenida"></div>
+  <div id="mensajeBienvenida" class="mensaje-oculto">
+    <p id="texto"></p>
+  </div>
   <header>
     <div id="Play">
       <div class="navbar">
@@ -147,7 +149,7 @@
               <input class="input" type="password" maxlength="1">
               <input class="input" type="password" maxlength="1">
             </div>
-            <div class="cajasTexto" >
+            <div class="cajasTexto">
               <input type="text" class="nombre" placeholder="Nombre actual">
               <input type="text" class="nuevoNombre" placeholder="Nuevo nombre">
             </div>
@@ -305,6 +307,7 @@
     </div>
   </footer>
   <script src="/archivos.js/manuales.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </body>
 
 </html>
