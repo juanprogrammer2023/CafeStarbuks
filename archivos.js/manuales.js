@@ -183,18 +183,21 @@ function lanzarConfetis() {
 document.addEventListener("DOMContentLoaded", function() {
   // Obtener el nombre del usuario de la URL
   const urlParams = new URLSearchParams(window.location.search);
-  const nombre = urlParams.get('nombre');
+  let nombre = urlParams.get('nombre');
+  if (!nombre) {
+    nombre = 'Invitado nuevo';
+  }
 
   // Mostrar el div con el mensaje de bienvenida
   const mensajeBienvenida = document.getElementById('mensajeBienvenida');
   const texto = document.getElementById('texto');
   texto.innerText = "¡Hola, " + nombre.split(' ')[0] + "! Es un gusto tenerte de nuevo aquí";
-  mensajeBienvenida.classList.add("mensaje-visible"); // Agregar clase para mostrar el mensaje
+  mensajeBienvenida.classList.add('mensaje-visible') // Agregar clase para mostrar el mensaje
   lanzarConfetis();
 
   setTimeout(() => {
-    mensajeBienvenida.classList.remove("mensaje-visible"); // Remover clase después de 3 segundos
-  }, 3000);
+    mensajeBienvenida.classList.remove("mensaje-visible");
+  }, 3000); 
 
   // Almacenar el nombre en el localStorage
   localStorage.setItem('nombreUsuario', nombre);

@@ -1,3 +1,42 @@
+.mensaje-oculto {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background-color: #333; /* Fondo oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  width: calc(100% - 60px); /* Ancho del mensaje */
+  max-width: 600px; /* Ancho máximo del mensaje */
+}
+
+/* Estilos para el texto dentro del mensaje */
+.mensaje-oculto p {
+  color: #fff; /* Texto blanco */
+  font-size: 20px; /* Tamaño de fuente */
+  margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para el mensaje cuando es visible */
+.mensaje-visible {
+  display: block;
+  animation: fadeIn 0.5s ease; /* Animación de fade-in */
+}
+
+/* Efecto de animación de fade-in */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Opacidad inicial */
+  }
+  to {
+      opacity: 1; /* Opacidad final */
+  }
+}
+
 .card {
   
   width: 100%;
@@ -375,6 +414,7 @@ main{
   border-image: fill 0 linear-gradient(#0001,#000);
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 main h1{
   color: black;
@@ -384,7 +424,9 @@ main h1{
   margin-top: .5%;
   display: flex;
   align-items: center;
-  color: white;
+  color:white ;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 15px;
   
 }
 .numero12{
@@ -535,6 +577,11 @@ main h1{
       
       
   }
+
+  .mensaje-oculto{
+    width: 70%;
+  }
+
   .social-container{
     margin-top: 10px;
     display: flex;
@@ -692,46 +739,9 @@ main h1{
   .plataforma{
     gap:100px;
   }
+  
 }
 
-/* Estilos para el mensaje oculto */
-#mensajeBienvenida {
-  display: none; /* Inicialmente oculto */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 30px;
-  background-color: #333; /* Fondo oscuro */
-  border-radius: 15px; /* Bordes redondeados */
-  z-index: 1000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
-  width: calc(100% - 60px); /* Ancho del mensaje */
-  max-width: 600px; /* Ancho máximo del mensaje */
-}
-
-/* Estilos para el texto dentro del mensaje */
-#texto {
-  color: #fff; /* Texto blanco */
-  font-size: 20px; /* Tamaño de fuente */
-  margin: 10px 0; /* Margen superior e inferior */
-}
-
-/* Estilos para el mensaje cuando es visible */
-.mensaje-visible {
-  display: block;
-  animation: fadeIn 0.5s ease; /* Animación de fade-in */
-}
-
-/* Efecto de animación de fade-in */
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Opacidad inicial */
-  }
-  to {
-    opacity: 1; /* Opacidad final */
-  }
-}
 
 
 
