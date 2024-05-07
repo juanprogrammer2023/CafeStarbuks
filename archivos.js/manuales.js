@@ -177,9 +177,18 @@ document.addEventListener("DOMContentLoaded", function() {
   const urlParams = new URLSearchParams(window.location.search);
   const nombre = urlParams.get('nombre');
 
-  // Mostrar una ventana emergente con el primer nombre del usuario
-  alert("¡Hola, " + nombre.split(' ')[0] + "! Es un gusto tenerte de nuevo aqui");
+  // Mostrar el div con el mensaje de bienvenida
+  const mensajeBienvenida = document.getElementById('mensajeBienvenida');
+  mensajeBienvenida.innerText = "¡Hola, " + nombre.split(' ')[0] + "! Es un gusto tenerte de nuevo aquí";
+  mensajeBienvenida.style.display = 'block';
+
+  // Ocultar el div después de 3 segundos
+  setTimeout(function() {
+      mensajeBienvenida.style.display = 'none';
+  }, 3000);
 
   // Almacenar el nombre en el localStorage
-  localStorage.setItem('nombreUsuario', nombre)})
+  localStorage.setItem('nombreUsuario', nombre);
+});
+
 
