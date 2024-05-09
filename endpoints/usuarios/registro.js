@@ -1,14 +1,3 @@
-//Registro.js
-const express = require('express');
-const router = express.Router();
-const mysql = require('mysql2');
-
-const connection = mysql.createConnection({
-    host: 'database-starbucks.c76ow40y46ib.us-east-2.rds.amazonaws.com',
-    user: 'JuanJS',
-    password: 'QyYDKsD8kavrHw8Pikx5',
-    database: 'Starbucks',
-});
 
 const ExpReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?\/~`-]).+$/;
 //ENDPOINT PARA REGISTRARSE ACTUALIZACION//
@@ -93,4 +82,4 @@ router.post('/registrar', (req, res) => {
   }
 });
 
-module.exports = router;
+
