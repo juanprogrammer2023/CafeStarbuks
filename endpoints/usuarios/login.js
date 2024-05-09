@@ -1,25 +1,18 @@
 // login.js
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql2');
-
-// Configuración de la conexión a la base de datos
-const connection = mysql.createConnection({
-  host: 'database-starbucks.c76ow40y46ib.us-east-2.rds.amazonaws.com',
-  user: 'JuanJS',
-  password: 'QyYDKsD8kavrHw8Pikx5',
-  database: 'Starbucks',
-});
+const connection = require('../database');
 
 // Endpoint para el login
 router.post('/login', (req, res) => {
   // Obtener el email y la contraseña del cuerpo de la solicitud
   const { email, password } = req.body;
-
+  console.log(connection);
   // Consultar la base de datos para verificar las credenciales del usuario
   const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
   connection.query(sql, [email, password], (error, results) => {
     if (error) {
+    console.log(connection);
       console.error('Error al verificar las credenciales del usuario:', error);
       return res.status(500).send('Error interno del servidor');
     }
