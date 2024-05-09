@@ -31,7 +31,7 @@ app.use('/', loginRouter); // Montar el enrutador de inicio de sesión en /usuar
 
 const ExpReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?\/~`-]).+$/;
 //ENDPOINT PARA REGISTRARSE ACTUALIZACION//
-router.post('/registrar', (req, res) => {
+app.post('/registrar', (req, res) => {
   const { name, email, password } = req.body;
 
   if (password.length > 9 && ExpReg.test(password)) {
