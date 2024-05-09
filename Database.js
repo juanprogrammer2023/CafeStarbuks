@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'CafeStarbucks')));
-app.use('/', loginRouter); // Montar el enrutador de inicio de sesión en /usuarios/login
+app.use('/usuarios/login', loginRouter); // Montar el enrutador de inicio de sesión en /usuarios/login
 
 
 const ExpReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?\/~`-]).+$/;
@@ -111,10 +111,6 @@ app.post('/registrar', (req, res) => {
     `);
   }
 });
-
-
-
-
 
 // Configurar el endpoint para servir archivos CSS y JavaScript dinámicamente
 app.get('/archivos.css/:nombreArchivo', (req, res) => {

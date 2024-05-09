@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 });
 
 // Endpoint para el login
-router.post('/login', (req, res) => {
+router.post('/usuarios/login', (req, res) => {
   // Obtener el email y la contraseña del cuerpo de la solicitud
   const { email, password } = req.body;
 
