@@ -14,6 +14,13 @@ const loginRouter = require('./endpoints/usuarios/login');
 const app = express();
 const registroRouter = require('./endpoints/usuarios/registro');
 
+const connection = mysql.createConnection({
+  host: 'database-starbucks.c76ow40y46ib.us-east-2.rds.amazonaws.com',
+  user: 'JuanJS',
+  password: 'QyYDKsD8kavrHw8Pikx5',
+  database: 'Starbucks',
+});
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
