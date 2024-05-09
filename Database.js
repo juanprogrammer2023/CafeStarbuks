@@ -18,10 +18,9 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/', loginRouter);
 app.use(express.static(path.join(__dirname, 'CafeStarbucks')));
-app.use('/registrar', registroRouter);
-
+app.use('/usuarios', loginRouter);
+app.use('/usuarios', registroRouter);
 
 // Configurar el endpoint para servir archivos CSS y JavaScript dinámicamente
 app.get('/archivos.css/:nombreArchivo', (req, res) => {
