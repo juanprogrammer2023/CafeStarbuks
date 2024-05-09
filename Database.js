@@ -10,7 +10,7 @@ const multer = require('multer');
 const fs = require('fs');
 const ExcelJS = require('exceljs');
 const mime = require('mime-types');
-const loginRouter = require('./endpoints/usuarios/login');
+const loginRouter = require('/endpoints/usuarios/login');
 const app = express();
 
 app.use(express.json());
