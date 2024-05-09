@@ -26,8 +26,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'CafeStarbucks')));
-app.use('/usuarios/login', loginRouter); // Montar el enrutador de inicio de sesión en /usuarios/login
-app.use('/usuarios/registro', registroRouter); // Mon
+app.use('./usuarios/login', loginRouter); // Montar el enrutador de inicio de sesión en /usuarios/login
+app.use('./usuarios/registro', registroRouter); 
 
 
 
