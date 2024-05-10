@@ -13,7 +13,7 @@ router.post('/login', (req, res) => {
   const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
   connection.query(sql, [email, password], (error, results) => {
     if (error) {
-    console.log(connection);
+    console.log('hola putos',connection,'terminamos aqui');
       console.error('Error al verificar las credenciales del usuario:', error);
       return res.status(500).send('Error interno del servidor');
     }
