@@ -5,10 +5,10 @@ const connection = require('../../Database');
 
 // Endpoint para el login
 router.post('/login', (req, res) => {
-  console.log(connection)
+  
   // Obtener el email y la contraseña del cuerpo de la solicitud
   const { email, password } = req.body;
-  console.log(connection);
+  
   // Consultar la base de datos para verificar las credenciales del usuario
   const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
   connection.query(sql, [email, password], (error, results) => {
