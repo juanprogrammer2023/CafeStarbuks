@@ -1,7 +1,7 @@
 // login.js
 const express = require('express');
 const router = express.Router();
-const connection = require('/Users/juanpablopinedamadrigal/StarbucksProject/Database.js');
+const connection = require('/home/ubuntu/StarbucksProject/Database.js');
 
 // Endpoint para el login
 router.post('/login', (req, res) => {
