@@ -1,7 +1,7 @@
 // login.js
 const express = require('express');
 const router = express.Router();
-const connection = require('../../Database');
+const connection = require('/Users/juanpablopinedamadrigal/StarbucksProject/Database.js');
 
 // Endpoint para el login
 router.post('/login', (req, res) => {
@@ -13,7 +13,7 @@ router.post('/login', (req, res) => {
   const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
   connection.query(sql, [email, password], (error, results) => {
     if (error) {
-    console.log('hola putos',connection,'terminamos aqui');
+    
       console.error('Error al verificar las credenciales del usuario:', error);
       return res.status(500).send('Error interno del servidor');
     }
