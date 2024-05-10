@@ -5,6 +5,7 @@ const connection = require('../../Database');
 
 // Endpoint para el login
 router.post('/login', (req, res) => {
+  console.log(connection)
   // Obtener el email y la contraseña del cuerpo de la solicitud
   const { email, password } = req.body;
   console.log(connection);
