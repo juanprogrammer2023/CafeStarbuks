@@ -1,17 +1,39 @@
-function redirigirAPagina() {
-  // Cambiar la ubicación de la página al hacer clic en el botón
-  window.location.href = './visualizacion.html';
-}
-
+//manuales.js//client
 const areas=document.getElementById('areas')
 const btonEliminar=document.getElementById('btonEliminar')
 const formulario=document.getElementById('miFormulario')
 const btoninfoarchivos=document.getElementById('infoarchivos')
 const infoarchivos=document.getElementById('resultado')
-const float=2802
 const btonEditar=document.getElementById('edicion')
 const formEditor=document.getElementById('formEditor')
 const btonTerminarEdicion=document.getElementById('btonTerminarEdicion')
+let SECRET_KEY;
+
+function obtenerSecretKey() {
+    fetch('http://18.188.216.108:3000/get-secret-key')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            SECRET_KEY = parseFloat(data.SECRET_KEY);
+            console.log("SECRET_KEY obtenida:", float);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Manejar errores
+        });
+}
+
+// Llamar a la función para obtener la SECRET_KEY cuando se cargue la página
+document.addEventListener('DOMContentLoaded', obtenerSecretKey);
+
+function redirigirAPagina() {
+  // Cambiar la ubicación de la página al hacer clic en el botón
+  window.location.href = './visualizacion.html';
+}
 
 btonEliminar.addEventListener('click', function() {
     formulario.classList.remove('oculto');
@@ -59,7 +81,7 @@ document.getElementById('btonTerminarEdicion').addEventListener('click', functio
     });
   
     
-    if (Number(contrasena) === float) {
+    if (Number(contrasena) === SECRET_KEY) {
     
       let data = {
         nombreActual: nombreActual,
@@ -111,7 +133,7 @@ document.getElementById('btonTerminarEdicion').addEventListener('click', functio
 
         const nombreArchivo = inputNombreArchivo.value.trim();
 
-        if (nombreArchivo && Number(contrasena) === float) { 
+        if (nombreArchivo && Number(contrasena) === SECRET_KEY) { 
             fetch('http://18.188.216.108:3000/eliminar-archivo', {
                 method: 'POST',
                 headers: {
