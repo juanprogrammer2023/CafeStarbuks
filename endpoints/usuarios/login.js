@@ -4,9 +4,12 @@ const router = express.Router();
 
 router.post('/login', (req, res) => {
 
-    // Obtener el email y la contraseña del cuerpo de la solicitud
-    const { email, password } = req.body;
+    const { email, password, confirmPassword } = req.body;
 
+    // Primero verificar que la contraseña y la confirmación de contraseña son iguales
+    if (password !== confirmPassword) {
+        return res.status(400).send('Las contraseñas no coinciden');
+    }
     // Consultar la base de datos para verificar las credenciales del usuario
     const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
     connection.query(sql, [email, password], (error, results) => {
