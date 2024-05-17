@@ -8,6 +8,7 @@ router.post('', (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
 
   if (password !== confirmPassword) {
+    console.log(confirmPassword,password)
     return res.status(400).send(`
       <html>
         <head><title>Error de Confirmación</title></head>
