@@ -51,6 +51,36 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+// Escuchar clics en el botón para alternar la visibilidad de la contraseña
+document.getElementById("togglePassword").addEventListener("click", function() {
+  const passwordInput = document.getElementById("password");
+  const toggleButton = document.getElementById("togglePassword");
+
+  // Cambiar el tipo de entrada entre "password" y "text"
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    toggleButton.innerHTML = '<i class="far fa-eye-slash"></i>';
+  } else {
+    passwordInput.type = "password";
+    toggleButton.innerHTML = '<i class="far fa-eye"></i>';
+  }
+});
+
+document.getElementById("togglePassword1").addEventListener("click", function() {
+  const passwordInput = document.getElementById("confirmPassword");
+  const toggleButton = document.getElementById("togglePassword1");
+
+  // Cambiar el tipo de entrada entre "password" y "text"
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    toggleButton.innerHTML = '<i class="far fa-eye-slash"></i>';
+  } else {
+    passwordInput.type = "password";
+    toggleButton.innerHTML = '<i class="far fa-eye"></i>';
+  }
+});
+
+
 
 
 

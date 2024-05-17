@@ -462,3 +462,9 @@ footer h1{
         padding: 5%;
     }
   }
+
+  #togglePassword1,#togglePassword{
+    background-color: #026eda;
+    border: #026eda;
+  }
+  
