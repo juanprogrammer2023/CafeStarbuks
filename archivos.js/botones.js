@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Error al iniciar sesión: No coincide la Contrasena');
+        throw new Error('Error al iniciar sesión');
       }
       return response.json();
     })
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .catch(error => {
       console.error('Error:', error);
-      alert("Error al iniciar sesión");
+      alert("Error al iniciar sesión:La contraseña no coincide");
     });
   }
 });
