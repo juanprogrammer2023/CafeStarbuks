@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Error al iniciar sesión');
+        throw new Error('Error al iniciar sesión: No coincide la Contrasena');
       }
       return response.json();
     })
