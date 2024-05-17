@@ -5,7 +5,20 @@ const router = express.Router();
 const ExpReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?\/~`-]).+$/;
 
 router.post('', (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, confirmPassword } = req.body;
+
+  if (password !== confirmPassword) {
+    return res.status(400).send(`
+      <html>
+        <head><title>Error de Confirmación</title></head>
+        <body style="font-family: Arial, sans-serif; margin: 40px; color: orange;">
+          <h1>Error de Confirmación</h1>
+          <p>Las contraseñas no coinciden.</p>
+          <button onclick="window.history.back()">Regresar</button>
+        </body>
+      </html>
+    `);
+  }
 
   if (password.length > 9 && ExpReg.test(password)) {
     const checkIfExistsQuery = 'SELECT * FROM usuarios WHERE email = ?';

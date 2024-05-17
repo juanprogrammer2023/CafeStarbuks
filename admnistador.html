@@ -160,6 +160,28 @@
               <i class="far fa-check-circle success-icon"></i>
               <div class="error"></div>
             </div>
+            <div>
+              <label for="confirmPassword">Confirm Password</label>
+              <i class="fas fa-lock"></i>
+              <input
+              type="password"required
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+              />
+              <span id="password-requirements" class="tooltip">
+                Requisitos:
+                <ul>
+                  <li>Al menos 10 caracteres</li>
+                  <li>Una letra mayúscula</li>
+                  <li>Un número</li>
+                  <li>Un carácter especial (ej. !@#$%)</li>
+                </ul>
+              </span>
+              <i class="fas fa-exclamation-circle failure-icon"></i>
+              <i class="far fa-check-circle success-icon"></i>
+              <div class="error"></div>
+            </div>
     
             <button type="submit" id="registroBtn">Registrarse</button>
             <button type="button" id="loginBtn">Iniciar sesión</button>
