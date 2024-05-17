@@ -5,7 +5,7 @@ const router = express.Router();
 const ExpReg = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?\/~`-]).+$/;
 
 router.post('', (req, res) => {
-  console.log(req.body);  
+  alert(req.body);  
   const { name, email, password, confirmPassword } = req.body;
 
   if (password !== confirmPassword) {
