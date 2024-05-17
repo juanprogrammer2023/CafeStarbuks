@@ -464,6 +464,9 @@ footer h1{
   }
 
   #togglePassword1,#togglePassword{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #026eda;
     border: #026eda;
   }
