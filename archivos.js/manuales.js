@@ -110,7 +110,7 @@ document.getElementById('btonTerminarEdicion').addEventListener('click', functio
       .catch(function(error) {
         // Manejar errores de la solicitud
         console.error(error);
-        alert(error.message +' la extension debe ser PDF' );
+        alert(error.message +' :la extension debe ser PDF' );
       }); 
     } else {
       // La contraseña no es correcta
