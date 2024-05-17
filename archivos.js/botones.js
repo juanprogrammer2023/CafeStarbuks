@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const registroBtn = document.getElementById('registroBtn');
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Verificar si las contraseñas coinciden
+    if (password !== confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return; // Detiene la ejecución si las contraseñas no coinciden
+    }
 
     // Enviamos los datos al servidor para verificar el inicio de sesión
     fetch('http://18.188.216.108:3000/login', {
