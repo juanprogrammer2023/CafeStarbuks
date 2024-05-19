@@ -91,7 +91,7 @@ h1{
     /* Otras propiedades permanecen igual */
     left: auto; /* Deshacer cualquier configuración previa si existe */
     right: 50%; /* Coloca el tooltip a la derecha del elemento, fuera de su borde */
-    top: 200%; /* Centrar verticalmente con respecto al elemento */
+    top: 120%; /* Centrar verticalmente con respecto al elemento */
     transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
     visibility: hidden;
     width: 200px;
